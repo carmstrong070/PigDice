@@ -205,7 +205,7 @@ function endTurn(){
         document.getElementById("game-stats").removeAttribute("hidden");
 
         document.getElementById("p1-lost-turns").innerText = player1.name + " lost " + player1.lostTurns + " turns."
-        document.getElementById("p2-lost-turns").innerText = player2.name + " lost " + player1.lostTurns + " turns."
+        document.getElementById("p2-lost-turns").innerText = player2.name + " lost " + player2.lostTurns + " turns."
 
         document.getElementById("p1-best-turn").innerText = player1.name + "'s best turn was " + player1.bestTurn + " points."
         document.getElementById("p2-best-turn").innerText = player2.name + "'s best turn was " + player2.bestTurn + " points."

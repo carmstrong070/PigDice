@@ -3,7 +3,8 @@ const NO_GAME = 0;
 const GAME_IN_PROGRESS = 1;
 const GAME_OVER = 2;
 const WINNING_SCORE = 100;
-
+const MIN_DICE_VAL = 1;
+const MAX_DICE_VAL = 1;
 
 window.onload = function(){
     let newGameBtn: HTMLInputElement = <HTMLInputElement> document.getElementById("new_game");
@@ -34,7 +35,7 @@ let player2 = new player();
 let gameHelper = new game();
 
 function generateRandomValue(minValue:number, maxValue:number):number{
-    return Math.floor(Math.random() * maxValue + 1);
+    return Math.floor(Math.random() * maxValue + minValue);
 }
 
 function changePlayers():void{
@@ -92,7 +93,7 @@ function rollDie():void{
     let totalElem: HTMLInputElement = <HTMLInputElement> document.getElementById("total"); 
     let currTotal = parseInt((<HTMLInputElement>document.getElementById("total")).value);    
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
-    let rollValue:number = generateRandomValue(1, 6)
+    let rollValue:number = generateRandomValue(MIN_DICE_VAL, MAX_DICE_VAL)
 
     //if the roll is 1
     if (rollValue == 1) {

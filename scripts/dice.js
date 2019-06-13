@@ -1,6 +1,11 @@
+var NO_GAME = 0;
+var GAME_IN_PROGRESS = 1;
+var GAME_OVER = 2;
+var WINNING_SCORE = 100;
 window.onload = function () {
     var newGameBtn = document.getElementById("new_game");
     newGameBtn.onclick = createNewGame;
+    document.querySelector("li:nth-child(1)").innerText = "First player to " + WINNING_SCORE + " wins.";
     document.getElementById("roll").onclick = rollDie;
     document.getElementById("hold").onclick = holdDie;
 };
@@ -20,10 +25,6 @@ var game = (function () {
     }
     return game;
 }());
-var NO_GAME = 0;
-var GAME_IN_PROGRESS = 1;
-var GAME_OVER = 2;
-var WINNING_SCORE = 50;
 var player1 = new player();
 var player2 = new player();
 var gameHelper = new game();

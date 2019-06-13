@@ -1,6 +1,16 @@
+// global constants 
+const NO_GAME = 0;
+const GAME_IN_PROGRESS = 1;
+const GAME_OVER = 2;
+const WINNING_SCORE = 100;
+
+
 window.onload = function(){
     let newGameBtn: HTMLInputElement = <HTMLInputElement> document.getElementById("new_game");
     newGameBtn.onclick = createNewGame;
+
+    // Set winning score
+    (<HTMLElement>document.querySelector("li:nth-child(1)")).innerText = "First player to " + WINNING_SCORE + " wins.";
 
     document.getElementById("roll").onclick = rollDie;
 
@@ -19,16 +29,10 @@ class game{
     turnTotal:number = 0;
     stateOfGame:number = 0;
 }
-// global constants 
-const NO_GAME = 0;
-const GAME_IN_PROGRESS = 1;
-const GAME_OVER = 2;
-const WINNING_SCORE = 50;
 
 let player1 = new player();
 let player2 = new player();
 let gameHelper = new game();
-
 
 function generateRandomValue(minValue:number, maxValue:number):number{
     var random = Math.random();

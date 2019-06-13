@@ -13,7 +13,6 @@ window.onload = function(){
     (<HTMLElement>document.querySelector("li:nth-child(1)")).innerText = "First player to " + WINNING_SCORE + " wins.";
 
     document.getElementById("roll").onclick = rollDie;
-
     document.getElementById("hold").onclick = holdDie;
 }
 // Create Player and Game classes
@@ -35,11 +34,7 @@ let player2 = new player();
 let gameHelper = new game();
 
 function generateRandomValue(minValue:number, maxValue:number):number{
-    var random = Math.random();
-    
-    //TODO: use random to generate a number between min and max
-
-    return Math.floor(random * maxValue + 1);
+    return Math.floor(Math.random() * maxValue + 1);
 }
 
 function changePlayers():void{
